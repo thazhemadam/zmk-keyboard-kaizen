@@ -1,16 +1,18 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include "vik_connector.dtsi"
 
+#define VIK_SPI_REG_START 1
+#define VIK_SPI_CS_PREFIX <&gpio0 5 GPIO_ACTIVE_LOW>
 
 &spi0 {
     status = "okay";
-    cs-gpios = <&gpio0 5 GPIO_ACTIVE_LOW>;
+    cs-gpios = VIK_SPI_CS_PREFIX;
     shift_reg: 595@0 {
         compatible = "zmk,gpio-595";
         status = "okay";
         gpio-controller;
         spi-max-frequency = <200000>;
         reg = <0>;
-        label = "4HC595";
         #gpio-cells = <2>;
         ngpios = <8>;
     };
