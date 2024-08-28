@@ -1,0 +1,5 @@
+&spi0_default {
+    group1 {
+        pinmux = <SPI0_CSN_P5>, <SPI0_SCK_P2>, <SPI0_TX_P3>;
+    };
+};
