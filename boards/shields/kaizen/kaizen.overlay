@@ -1,5 +1,4 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "vik_connector.dtsi"
 
 #define VIK_SPI_REG_START 1
 #define VIK_SPI_CS_PREFIX <&gpio0 5 GPIO_ACTIVE_LOW>
