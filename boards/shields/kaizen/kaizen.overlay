@@ -1,4 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include "kaizen-layouts.dtsi"
 
 #define VIK_SPI_REG_START 1
 #define VIK_SPI_CS_PREFIX <&gpio0 5 GPIO_ACTIVE_LOW>
@@ -17,10 +18,14 @@
     };
 };
 
+&physical_layout0 {
+    transform = <&default_transform>;
+};
+
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,matrix_transform = &default_transform;
+        zmk,physical-layout = &physical_layout0;
     };
 
     default_transform: keymap_transform_0 {
